@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Une Aventure Spéciale</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" href="images/icon-app.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Ton Cadeau">
+    <meta name="theme-color" content="#6c5ce7">
+
+</head>
+
+<body>
+    <button id="menu-open-btn" onclick="toggleMenu()">☰ Chapitres</button>
+
+    <div id="side-menu" class="side-menu-closed">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <div class="menu-content">
+            <h2>Navigation</h2>
+            <button onclick="retourAccueil()">🏠 Accueil</button>
+            <hr>
+            <h3>Aller au Chapitre :</h3>
+            <div id="chapters-list">
+                <button onclick="allerAuChapitre(1)">1. Le début</button>
+                <button onclick="allerAuChapitre(4)">4. L'énigme</button>
+                <button onclick="allerAuChapitre(10)">10. La fin ❤️</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div id="welcome-screen">
+        <div id="welcome-content">
+            <h1>Coucou toi ❤️</h1>
+            <p> Bienvenue mi amor ! J'ai préparé une petite aventure rien que pour toi.  Aujourd'hui, c'est toi la joueuse principale. 
+                Alors franchement j'ai aucune idee de si ca va te plaire ou pas mais bon je voulais te montrer un peu de quoi je suis 'capable' et voila. 
+                Donc c un jeux mais juste pour toi il est sur toi et moi et d'autres 
+                petit moment juste de texte comme des lettres un peu t'auras des jeux, des énigmes des trucs pas mal quoi j'espere ca va pas te souler ou autre. </p>
+            <p>Es-tu prête à commencer ?</p>
+            <button id="start-btn" onclick="demarrerJeu()">Commencer a jouerrrr</button>
+        </div>
+    </div>
+
+
+    <div id="game-container">
+        <div id="image-wrapper">
+            <img id="scene-image" src="" alt="Scène">
+        </div>
+
+        <button id="bag-btn" onclick="toggleInventory()">🎒 Mon Sac</button>
+
+        <div id="inventory-screen" class="hidden-element">
+            <div class="inventory-content">
+                <button class="close-inventory" onclick="toggleInventory()">×</button>
+                <h2>Mon Sac à dos</h2>
+                <p id="empty-msg">Ton sac est vide pour le moment...</p>
+                <div id="inventory-grid">
+                    </div>
+            </div>
+        </div>
+
+        <div id="content-card">
+            <p id="story-text"></p>
+            
+            <div id="minigame-container" class="hidden-element">
+                <input type="number" id="code-input" placeholder="Entrer le code...">
+                <button onclick="verifierCode()">Valider</button>
+            </div>
+
+            <div id="choices-container"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
