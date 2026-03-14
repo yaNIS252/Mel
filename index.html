@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Une Aventure Spéciale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <div id="game-container">
+        <div id="image-wrapper">
+            <img id="scene-image" src="" alt="Scène">
+        </div>
+
+        <div id="inventory-bar">
+            <strong>Sac à dos :</strong> <span id="inventory-list">Vide</span>
+        </div>
+
+        <div id="content-card">
+            <p id="story-text"></p>
+            
+            <div id="minigame-container" class="hidden-element">
+                <input type="number" id="code-input" placeholder="Entrer le code...">
+                <button onclick="verifierCode()">Valider</button>
+            </div>
+
+            <div id="choices-container"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
