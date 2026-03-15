@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Une Aventure Spéciale ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Ton Cadeau">
+    <meta name="theme-color" content="#6c5ce7">
+</head>
+
+<body>
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <button id="menu-open-btn" onclick="toggleMenu()">☰ Chapitres</button>
+    <button id="bag-btn" onclick="toggleInventory()">🎒 Mon Sac</button>
+
+    <div id="side-menu" class="side-menu-closed">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        <div class="menu-content">
+            <h2>Navigation</h2>
+            <button onclick="retourAccueil()">🏠 Accueil</button>
+            <hr>
+            <h3>Aller au Chapitre :</h3>
+            <div id="chapters-list">
+                <button onclick="allerAuChapitre(1)">1. Le début</button>
+                <button onclick="allerAuChapitre(4)">4. L'énigme</button>
+                <button onclick="allerAuChapitre(10)">10. La fin ❤️</button>
+            </div>
+            <hr>
+            <button onclick="resetGame()" style="background-color: #e74c3c; color: white;">⚠️ Réinitialiser</button>
+        </div>
+    </div>
+
+    <div id="welcome-screen">
+        <div id="welcome-content">
+            <h1>Coucou toi ❤️</h1>
+            <p> 
+                Bienvenue mi amor ! J'ai préparé une petite aventure rien que pour toi. 
+                Aujourd'hui, c'est toi la joueuse principale. 
+                C'est un jeu sur nous, nos moments, avec des énigmes et des surprises.
+            </p>
+            <p>Es-tu prête à commencer ?</p>
+            <button id="start-btn" onclick="demarrerJeu()">Commencer l'aventure</button>
+        </div>
+    </div>
+
+    <div id="game-container">
+        <div id="image-wrapper">
+            <img id="scene-image" src="" alt="Scène">
+        </div>
+
+        <div id="inventory-screen" class="hidden-element">
+            <div class="inventory-content">
+                <button class="close-inventory" onclick="toggleInventory()">×</button>
+                <h2>🎒 Mon Sac à dos</h2>
+                <p id="empty-msg">Ton sac est vide pour le moment...</p>
+                <div id="inventory-grid">
+                    </div>
+            </div>
+        </div>
+
+        <div id="content-card">
+            <p id="story-text"></p>
+            
+            <div id="minigame-container" class="hidden-element">
+                <input type="number" id="code-input" placeholder="Entrer le code...">
+                <button onclick="verifierCode()">Valider</button>
+            </div>
+
+            <div id="choices-container"></div>
+        </div>
+    </div>
+
+    <div id="media-viewer" class="hidden-element" onclick="fermerMedia()">
+        <div class="viewer-content" onclick="event.stopPropagation()">
+            <span class="close-viewer" onclick="fermerMedia()">&times;</span>
+            <div id="viewer-display"></div>
+            <h3 id="viewer-title"></h3>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "Mon Aventure Spéciale",
+  "short_name": "Aventure",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#6c5ce7",
+  "theme_color": "#6c5ce7",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+    
+  ]
+}
